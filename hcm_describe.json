@@ -1,0 +1,4187 @@
+
+{
+    "ParseStatus" : true,
+    "Authorized" : true,
+    "Services" : [
+        {
+            "ApplicationServiceID" : "PT_CONFIGURATION",
+            "IDForServiceURL" : "pt.Configuration",
+            "Description" : "Application Service to set Authentication Type",
+            "CacheSupportLevel" : "System",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+            ],
+            "OutputParameters" : [
+            ],
+            "ResultStates" : [
+            ]
+        },
+        {
+            "ApplicationServiceID" : "BEN_CHATBOT_SERVICES",
+            "IDForServiceURL" : "benefit.Services",
+            "Description" : "Benefit ChatBot Services",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "InParameters",
+                    "DataType" : "Compound",
+                    "Description" : "InputpParameters in json format",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "InRequestName",
+                    "DataType" : "String",
+                    "Description" : "Function Name",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "OutDataArray",
+                    "DataType" : "Compound Array",
+                    "Description" : "Output data in array",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "OutDataObj",
+                    "DataType" : "Compound",
+                    "Description" : "Output data in json format",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "OutMsg",
+                    "DataType" : "String",
+                    "Description" : "Message",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Failure"
+                },
+                {
+                    "Name" : "NoData",
+                    "Category" : "Success",
+                    "Description" : "No data found"
+                },
+                {
+                    "Name" : "Success",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "BEN_GET_CHILD_NODE",
+            "IDForServiceURL" : "benefit.GetChildNode",
+            "Description" : "Get child array from json object",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "InJsonData",
+                    "DataType" : "Compound",
+                    "Description" : "Input JSON Data",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NodeName",
+                    "DataType" : "String",
+                    "Description" : "Child node name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NodeType",
+                    "DataType" : "String",
+                    "Description" : "JSON node type",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "OutArray",
+                    "DataType" : "Compound Array",
+                    "Description" : "Out put JSON data",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "OutMsg",
+                    "DataType" : "String",
+                    "Description" : "Service Response Message",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Failure"
+                },
+                {
+                    "Name" : "NoData",
+                    "Category" : "Success",
+                    "Description" : "No data found"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "EOCB_GETMSGCATLOG",
+            "IDForServiceURL" : "ps.GetMessageCatalogs",
+            "Description" : "Message Catalogs without parameter substitution",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "MsgCatalogNumList",
+                    "DataType" : "Number List",
+                    "Description" : "Message Catalog List",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "MsgSetNumber",
+                    "DataType" : "Number",
+                    "Description" : "Message Set Number",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "MsgCatBundleObject",
+                    "DataType" : "Compound",
+                    "Description" : "Message Catalog Texts",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "MsgCatDescrBundleObject",
+                    "DataType" : "Compound",
+                    "Description" : "Message Catalog Description",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "MISSINGPARAMETER",
+                    "Category" : "Failure",
+                    "Description" : "Failure"
+                },
+                {
+                    "Name" : "NOMSGFOUND",
+                    "Category" : "Failure",
+                    "Description" : "NoMessagesFound"
+                },
+                {
+                    "Name" : "SUCCESS",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "EOCB_GETSYSTEMVARIABLES",
+            "IDForServiceURL" : "ps.GetSystemVariables",
+            "Description" : "Get System Variables",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "EmailAddress",
+                    "DataType" : "String",
+                    "Description" : "Email Address",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmployeeId",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Language",
+                    "DataType" : "String",
+                    "Description" : "Language",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Language_Base",
+                    "DataType" : "String",
+                    "Description" : "Base Language",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Language_User",
+                    "DataType" : "String",
+                    "Description" : "User Language",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "OperatorId",
+                    "DataType" : "String",
+                    "Description" : "Operator ID",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "FAILURE",
+                    "Category" : "Failure",
+                    "Description" : "Failure"
+                },
+                {
+                    "Name" : "SUCCESS",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "EOCB_GUID_TO_PSTOKEN",
+            "IDForServiceURL" : "ps.AuthenticateGUID",
+            "Description" : "Authenticate a users chatbot guid",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : false,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "guid",
+                    "DataType" : "String",
+                    "Description" : "Guid",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "pstoken",
+                    "DataType" : "String",
+                    "Description" : "PSToken",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "FAILURE",
+                    "Category" : "Failure",
+                    "Description" : "Failure"
+                },
+                {
+                    "Name" : "SUCCESS",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "EOCB_VERIFY_SERVICE_ACCESS",
+            "IDForServiceURL" : "ps.VerifyServiceAccess",
+            "Description" : "Verify current user access to a service",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "IDForServiceURL",
+                    "DataType" : "String",
+                    "Description" : "ID for Service URL",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ServiceID",
+                    "DataType" : "String",
+                    "Description" : "Service ID",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "AUTHORIZED",
+                    "Category" : "Success",
+                    "Description" : "Authorized"
+                },
+                {
+                    "Name" : "INVALID",
+                    "Category" : "Failure",
+                    "Description" : "Invalid Service"
+                },
+                {
+                    "Name" : "UNAUTHORIZERD",
+                    "Category" : "Failure",
+                    "Description" : "Unauthorized"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "GP_CORE_CHATBOT",
+            "IDForServiceURL" : "gp.GlobalPayroll",
+            "Description" : "Global Payroll Core Chatbot",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "HCB_GetInputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Json Input Values",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HCB_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Json Output Values",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "FAILURE",
+                    "Category" : "Failure",
+                    "Description" : "Failure"
+                },
+                {
+                    "Name" : "SUCCESS",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HCB_GETPRODUCT_PROFILE",
+            "IDForServiceURL" : "ps.GetProductProfile",
+            "Description" : "Get Product Profile from Setup CB",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "HCB_SetProductProfile",
+                    "DataType" : "Compound",
+                    "Description" : "Input Json values",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HCB_GetProductProfile",
+                    "DataType" : "Compound",
+                    "Description" : "Output Json values",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "FAILURE",
+                    "Category" : "Failure",
+                    "Description" : "Failed"
+                },
+                {
+                    "Name" : "SUCCESS",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HCB_GETPROFILE",
+            "IDForServiceURL" : "ps.GetProfile",
+            "Description" : "Get Profile for Chatbot User dmo",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HCB_GetProfileJSON",
+                    "DataType" : "Compound",
+                    "Description" : "JSON object with all the Profile Information",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "FAILURE",
+                    "Category" : "Failure",
+                    "Description" : "Failure"
+                },
+                {
+                    "Name" : "SUCCESS",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_CALC_ABS_DURATION",
+            "IDForServiceURL" : "absence.CalcAbsDuration",
+            "Description" : "Calculate Absence Duration",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EndDt",
+                    "DataType" : "Date",
+                    "Description" : "End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Pin Take Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "StartDt",
+                    "DataType" : "Date",
+                    "Description" : "Begin Date",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "DurationAbs",
+                    "DataType" : "Number",
+                    "Description" : "Absence Duration",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "DurationDays",
+                    "DataType" : "Number",
+                    "Description" : "Duration Days",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "DurationHrs",
+                    "DataType" : "Number",
+                    "Description" : "Duration Hours",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "MsgOut",
+                    "DataType" : "String",
+                    "Description" : "Message Out",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "UnitType",
+                    "DataType" : "String",
+                    "Description" : "Unit Type",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "EndDtErr",
+                    "Category" : "Failure",
+                    "Description" : "End Date Error"
+                },
+                {
+                    "Name" : "Error",
+                    "Category" : "Failure",
+                    "Description" : "Duration Calculation Error"
+                },
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Failed"
+                },
+                {
+                    "Name" : "StartDtErr",
+                    "Category" : "Failure",
+                    "Description" : "Start Date Error"
+                },
+                {
+                    "Name" : "Success",
+                    "Category" : "Success",
+                    "Description" : "Calculation Sucessfull"
+                },
+                {
+                    "Name" : "Warning",
+                    "Category" : "Success",
+                    "Description" : "Warning"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_CANCEL_ABSENCE",
+            "IDForServiceURL" : "absence.CancelAbsence",
+            "Description" : "Cancel Absence Request",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "Cancel_Reason",
+                    "DataType" : "String",
+                    "Description" : "Cancel Reason",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Comments",
+                    "DataType" : "String",
+                    "Description" : "Comments",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Transaction_Nbr",
+                    "DataType" : "Number",
+                    "Description" : "Transaction Nbr",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "MsgOut",
+                    "DataType" : "String",
+                    "Description" : "Out Message",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "AbsNotFound",
+                    "Category" : "Success",
+                    "Description" : "Absence Not Found"
+                },
+                {
+                    "Name" : "CancelInProcess",
+                    "Category" : "Success",
+                    "Description" : "Cancel In Progress"
+                },
+                {
+                    "Name" : "Canceled",
+                    "Category" : "Success",
+                    "Description" : "Canceled"
+                },
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Failed"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Passed"
+                },
+                {
+                    "Name" : "SubCancel",
+                    "Category" : "Success",
+                    "Description" : "Submitted for Cancel"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_CHECK_ELIGIBILITY",
+            "IDForServiceURL" : "absence.CheckEligibility",
+            "Description" : "Check Eligibility",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EndDt",
+                    "DataType" : "Date",
+                    "Description" : "End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Pin Take Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "StartDt",
+                    "DataType" : "Date",
+                    "Description" : "Begin Date",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "FcstValue",
+                    "DataType" : "String",
+                    "Description" : "Forecast Result",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "MsgOut",
+                    "DataType" : "String",
+                    "Description" : "Message Out",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Error",
+                    "Category" : "Failure",
+                    "Description" : "Forecast Error"
+                },
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Process Failed"
+                },
+                {
+                    "Name" : "Success",
+                    "Category" : "Success",
+                    "Description" : "Completed Successfully"
+                },
+                {
+                    "Name" : "Warning",
+                    "Category" : "Success",
+                    "Description" : "Forecast Warning"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_EMP_BALANCES",
+            "IDForServiceURL" : "absence.GetEmpAbsenceBalances",
+            "Description" : "Employee Absence Balances",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "AbsenceNameIn",
+                    "DataType" : "String",
+                    "Description" : "Absence Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Absence Take Pin",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "AsOfDate",
+                    "DataType" : "String",
+                    "Description" : "Balance As Of Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Balance",
+                    "DataType" : "Number",
+                    "Description" : "Balance Value",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "BalanceString",
+                    "DataType" : "String",
+                    "Description" : "Balance String Value",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EntBalName",
+                    "DataType" : "String",
+                    "Description" : "Entitlement Balance Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EntBalNbrOut",
+                    "DataType" : "Number",
+                    "Description" : "Entitlement Balance Nbr",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "MsgOut",
+                    "DataType" : "String",
+                    "Description" : "Out Message",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "UnitType",
+                    "DataType" : "String",
+                    "Description" : "Balance Unit Type",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoBalance",
+                    "Category" : "Success",
+                    "Description" : "No Balance"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_EMP_CNCL_REQUESTS",
+            "IDForServiceURL" : "absence.GetCnclAbsenceRequests",
+            "Description" : "Absence Requests for Cancelation",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "AbsenceNameIn",
+                    "DataType" : "String",
+                    "Description" : "Absence Take Description",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Record Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "FromDate",
+                    "DataType" : "String",
+                    "Description" : "Original Begin Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ToDate",
+                    "DataType" : "String",
+                    "Description" : "Original End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "WFStatusIn",
+                    "DataType" : "String",
+                    "Description" : "Input Absence Status",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "AbsenceName",
+                    "DataType" : "String",
+                    "Description" : "Absence Take Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "AbsenceReason",
+                    "DataType" : "String",
+                    "Description" : "Absence Reason",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "CancelOption",
+                    "DataType" : "String",
+                    "Description" : "Cancel Option",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Comments",
+                    "DataType" : "String",
+                    "Description" : "Comments",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Country",
+                    "DataType" : "String",
+                    "Description" : "Country",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Pin Take Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Quantity",
+                    "DataType" : "String",
+                    "Description" : "Duration of Absence",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "RequestDate",
+                    "DataType" : "String",
+                    "Description" : "Request Orig Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "RequestEndDate",
+                    "DataType" : "String",
+                    "Description" : "Request End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Requestor",
+                    "DataType" : "String",
+                    "Description" : "Requestor of Absence",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "StatusCode",
+                    "DataType" : "String",
+                    "Description" : "Absence Status Value",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "TransactionNbr",
+                    "DataType" : "Number",
+                    "Description" : "Transaction Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "WFStatus",
+                    "DataType" : "String",
+                    "Description" : "Absence Status",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoRequests",
+                    "Category" : "Success",
+                    "Description" : "No Absence Requests"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_EMP_JOBS",
+            "IDForServiceURL" : "absence.GetEmployeeJobs",
+            "Description" : "Employee Jobs",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Empl_Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "JobTitle",
+                    "DataType" : "String",
+                    "Description" : "Job Title",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "MultiJobs",
+                    "Category" : "Success",
+                    "Description" : "Multiple Jobs"
+                },
+                {
+                    "Name" : "NoJobs",
+                    "Category" : "Success",
+                    "Description" : "No Jobs Available"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                },
+                {
+                    "Name" : "SingleJob",
+                    "Category" : "Success",
+                    "Description" : "Single Job"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_EMP_REQUESTS",
+            "IDForServiceURL" : "absence.GetEmpAbsenceRequests",
+            "Description" : "Employee Absence Requests",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "AbsenceNameIn",
+                    "DataType" : "String",
+                    "Description" : "Absence Take Description",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Record Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "FromDate",
+                    "DataType" : "String",
+                    "Description" : "Original Begin Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ToDate",
+                    "DataType" : "String",
+                    "Description" : "Original End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "WFStatusIn",
+                    "DataType" : "String",
+                    "Description" : "Workflow Absence Status",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "AbsenceName",
+                    "DataType" : "String",
+                    "Description" : "Absence Take Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "AbsenceReason",
+                    "DataType" : "String",
+                    "Description" : "Absence Reason",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "CancelOption",
+                    "DataType" : "String",
+                    "Description" : "Cancel Option",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Comments",
+                    "DataType" : "String",
+                    "Description" : "Comments",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Country",
+                    "DataType" : "String",
+                    "Description" : "Country",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Pin Take Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Quantity",
+                    "DataType" : "String",
+                    "Description" : "Duration of Absence",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "RequestDate",
+                    "DataType" : "String",
+                    "Description" : "Request Orig Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "RequestEndDate",
+                    "DataType" : "String",
+                    "Description" : "Request End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Requestor",
+                    "DataType" : "String",
+                    "Description" : "Requestor of Absence",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "StatusCode",
+                    "DataType" : "String",
+                    "Description" : "Absence Status Value",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "TransactionNbr",
+                    "DataType" : "Number",
+                    "Description" : "Transaction Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "WFStatus",
+                    "DataType" : "String",
+                    "Description" : "Absence Status",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoRequests",
+                    "Category" : "Success",
+                    "Description" : "No Absence Requests"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_FCST_BALANCE",
+            "IDForServiceURL" : "absence.ForecastBalance",
+            "Description" : "Forecast Absence Balance",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "FcstDate",
+                    "DataType" : "Date",
+                    "Description" : "Forecast Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Pin Take Number",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "AsOfDate",
+                    "DataType" : "String",
+                    "Description" : "As of date string",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Balance",
+                    "DataType" : "Number",
+                    "Description" : "Balance Value",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "BalanceString",
+                    "DataType" : "String",
+                    "Description" : "Balance String",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EntBalName",
+                    "DataType" : "String",
+                    "Description" : "Balance Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EntBalNbrOut",
+                    "DataType" : "Number",
+                    "Description" : "Balance Pin",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "MsgOut",
+                    "DataType" : "String",
+                    "Description" : "Forecast Message",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "UnitType",
+                    "DataType" : "String",
+                    "Description" : "Unit Type",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "AsOfDtErr",
+                    "Category" : "Success",
+                    "Description" : "Balance As of Date Error"
+                },
+                {
+                    "Name" : "DefaultErr",
+                    "Category" : "Success",
+                    "Description" : "Default Error contact Admin"
+                },
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Failed"
+                },
+                {
+                    "Name" : "FcstSuccess",
+                    "Category" : "Success",
+                    "Description" : "Forecast Successfull"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                },
+                {
+                    "Name" : "PriorPrdErr",
+                    "Category" : "Success",
+                    "Description" : "Forecast date prior to last finalized period"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_GETTAKE_PROMPT",
+            "IDForServiceURL" : "absence.GetEmpAbsTakesPrompt",
+            "Description" : "Absence Takes Prompt",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "AbsenceNameIn",
+                    "DataType" : "String",
+                    "Description" : "Absence Name Input",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "AsOfDate",
+                    "DataType" : "Date",
+                    "Description" : "As of Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "TransType",
+                    "DataType" : "String",
+                    "Description" : "Transaction Type",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "AbsenceName",
+                    "DataType" : "String",
+                    "Description" : "Absence Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "AllowPartialDays",
+                    "DataType" : "String",
+                    "Description" : "Allow Partial Days Flag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "FcstReqired",
+                    "DataType" : "String",
+                    "Description" : "Forecasting Required Flag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PartialDaysOptn",
+                    "DataType" : "String",
+                    "Description" : "Partial Days Optn",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Absence Take Num",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoTakes",
+                    "Category" : "Success",
+                    "Description" : "No Absence Takes"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_GET_CANCELRSN",
+            "IDForServiceURL" : "absence.GetCancelReason",
+            "Description" : "Absence Cancel Reasons",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "AsOfDate",
+                    "DataType" : "String",
+                    "Description" : "As Of Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Country",
+                    "DataType" : "String",
+                    "Description" : "Country",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "String",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Pin number of the take",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "Reason",
+                    "DataType" : "String",
+                    "Description" : "Reason Code",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ReasonDescr",
+                    "DataType" : "String",
+                    "Description" : "Reason Description",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoCnclRsn",
+                    "Category" : "Success",
+                    "Description" : "No Cancel Reason"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_GET_REQ_URL",
+            "IDForServiceURL" : "absence.GetAbsRequestUrl",
+            "Description" : "Get Absence Request Page URL",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EndDt",
+                    "DataType" : "Date",
+                    "Description" : "End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Market",
+                    "DataType" : "String",
+                    "Description" : "Market",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Node",
+                    "DataType" : "String",
+                    "Description" : "Node Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Pin Take Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Portal",
+                    "DataType" : "String",
+                    "Description" : "Portal Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "StartDt",
+                    "DataType" : "Date",
+                    "Description" : "Start Date",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "MsgOut",
+                    "DataType" : "String",
+                    "Description" : "Message Out",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Url",
+                    "DataType" : "String",
+                    "Description" : "Request Page URL",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Failure"
+                },
+                {
+                    "Name" : "Success",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_GET_USERFIELDS",
+            "IDForServiceURL" : "absence.GetUserFields",
+            "Description" : "Absence User Fields",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EndDt",
+                    "DataType" : "Date",
+                    "Description" : "End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Pin Take Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "StartDt",
+                    "DataType" : "Date",
+                    "Description" : "Begin Date",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "Label",
+                    "DataType" : "String",
+                    "Description" : "User Field Label",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "MsgOut",
+                    "DataType" : "String",
+                    "Description" : "Message Out",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Required",
+                    "DataType" : "String",
+                    "Description" : "Required Flag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SeqNum",
+                    "DataType" : "String",
+                    "Description" : "Sequence No",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Type",
+                    "DataType" : "String",
+                    "Description" : "Field Type",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Failed"
+                },
+                {
+                    "Name" : "NoUF",
+                    "Category" : "Success",
+                    "Description" : "No User Fields"
+                },
+                {
+                    "Name" : "UFExists",
+                    "Category" : "Success",
+                    "Description" : "User Fields Exists"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_GET_USERPROFILE",
+            "IDForServiceURL" : "absence.GetUserProfile",
+            "Description" : "User Profile Details",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "EmailID",
+                    "DataType" : "String",
+                    "Description" : "Email ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "MsgOut",
+                    "DataType" : "String",
+                    "Description" : "Error Message",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Name",
+                    "DataType" : "String",
+                    "Description" : "Profile Name",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Failed"
+                },
+                {
+                    "Name" : "Success",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_REQUEST_ABS",
+            "IDForServiceURL" : "absence.CreateAbsenceRequest",
+            "Description" : "Create Absence Request",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "AbsenceReason",
+                    "DataType" : "String",
+                    "Description" : "Absence Reason",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "CharUF1",
+                    "DataType" : "String",
+                    "Description" : "Char User Field1",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "CharUF2",
+                    "DataType" : "String",
+                    "Description" : "Char User Field2",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "CharUF3",
+                    "DataType" : "String",
+                    "Description" : "Char User Field3",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "CharUF4",
+                    "DataType" : "String",
+                    "Description" : "Char User Field4",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Comments",
+                    "DataType" : "String",
+                    "Description" : "Comments",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "DurationAbs",
+                    "DataType" : "Number",
+                    "Description" : "Duration",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "DurationDays",
+                    "DataType" : "Number",
+                    "Description" : "Duration Days",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "DurationHrs",
+                    "DataType" : "Number",
+                    "Description" : "Duration Hours",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EndDt",
+                    "DataType" : "Date",
+                    "Description" : "End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NumUF1",
+                    "DataType" : "Number",
+                    "Description" : "Number User Field1",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NumUF2",
+                    "DataType" : "Number",
+                    "Description" : "Number User Field2",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NumUF3",
+                    "DataType" : "Number",
+                    "Description" : "Number User Field3",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NumUF4",
+                    "DataType" : "Number",
+                    "Description" : "Number User Field4",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Pin Take Number",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SeqNumUF1",
+                    "DataType" : "Number",
+                    "Description" : "Seq Num for User Field1",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SeqNumUF2",
+                    "DataType" : "Number",
+                    "Description" : "Seq Num for User Field2",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SeqNumUF3",
+                    "DataType" : "Number",
+                    "Description" : "Seq Num for User Field3",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SeqNumUF4",
+                    "DataType" : "Number",
+                    "Description" : "Seq Num for User Field4",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "StartDt",
+                    "DataType" : "Date",
+                    "Description" : "Begin Date",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "MsgOut",
+                    "DataType" : "String",
+                    "Description" : "Message Out",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Approved",
+                    "Category" : "Success",
+                    "Description" : "Approved"
+                },
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Failed"
+                },
+                {
+                    "Name" : "Submitted",
+                    "Category" : "Success",
+                    "Description" : "Submitted"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_REQ_REASONS",
+            "IDForServiceURL" : "absence.GetAbsenceReasons",
+            "Description" : "Absence Reasons",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "AsOfDate",
+                    "DataType" : "Date",
+                    "Description" : "As Of Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Pin Take Number",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "AbsenceReason",
+                    "DataType" : "String",
+                    "Description" : "Absence Reason",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Description",
+                    "DataType" : "String",
+                    "Description" : "Reason Description",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "NoReasons",
+                    "Category" : "Success",
+                    "Description" : "No Reasons"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                },
+                {
+                    "Name" : "ReasonNotRequired",
+                    "Category" : "Success",
+                    "Description" : "Reason not Required"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_VALIDATE_FCSTDT",
+            "IDForServiceURL" : "absence.ValidateFcstDate",
+            "Description" : "Validate forecast date",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "FcstDate",
+                    "DataType" : "Date",
+                    "Description" : "Forecast Date",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "FinalizedPrdEndDt",
+                    "DataType" : "Date",
+                    "Description" : "Last Finalized Prd End Date",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "PriorPrd",
+                    "Category" : "Success",
+                    "Description" : "Prior Period"
+                },
+                {
+                    "Name" : "ValidPrd",
+                    "Category" : "Success",
+                    "Description" : "Valid Period"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HGA_VALIDATE_TAKE",
+            "IDForServiceURL" : "absence.ValidateAbsenceName",
+            "Description" : "Validate Absence Name",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "AbsenceNameIn",
+                    "DataType" : "String",
+                    "Description" : "Absence Take Description",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "AsOfDate",
+                    "DataType" : "Date",
+                    "Description" : "As Of Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplID",
+                    "DataType" : "String",
+                    "Description" : "Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "Employee Rcd",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "AbsenceName",
+                    "DataType" : "String",
+                    "Description" : "Absence Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "AllowPartialDays",
+                    "DataType" : "String",
+                    "Description" : "Allow Partial Days Flag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "FcstReqired",
+                    "DataType" : "String",
+                    "Description" : "Forecast Required Flag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PartialDaysOptn",
+                    "DataType" : "String",
+                    "Description" : "Partial Days Optn",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PinTakeNum",
+                    "DataType" : "Number",
+                    "Description" : "Absence Take Pin",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "InValid",
+                    "Category" : "Success",
+                    "Description" : "In Valid"
+                },
+                {
+                    "Name" : "Valid",
+                    "Category" : "Success",
+                    "Description" : "Single Valid Take"
+                },
+                {
+                    "Name" : "ValidMulti",
+                    "Category" : "Success",
+                    "Description" : "Multiple Valid Takes"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_BUSNSPRTNR_DTLS",
+            "IDForServiceURL" : "payroll.BusnsPrtnerDtls",
+            "Description" : "Business Partner Details",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Details",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoBPDetails",
+                    "Category" : "Success",
+                    "Description" : "NoBPDetails"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_DISPLAY_DTLS",
+            "IDForServiceURL" : "payroll.GetDisplayDtls",
+            "Description" : "Display Message",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Display Message",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "Success",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_EXIT_MSG",
+            "IDForServiceURL" : "payroll.GetExitMessage",
+            "Description" : "Get Exit Message",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "ExitIntent",
+                    "DataType" : "String",
+                    "Description" : "Exit Intent",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Exit Message",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "Success",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                },
+                {
+                    "Name" : "UserExit",
+                    "Category" : "Success",
+                    "Description" : "User Exit"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_GARNSHMT_DTLS",
+            "IDForServiceURL" : "payroll.ViewSetupDtls",
+            "Description" : "View Setup Details",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "Action",
+                    "DataType" : "String",
+                    "Description" : "Action",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ActionType",
+                    "DataType" : "String",
+                    "Description" : "ActionType",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Filter",
+                    "DataType" : "String",
+                    "Description" : "Filter",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "UserQuery",
+                    "DataType" : "String",
+                    "Description" : "UserQuery",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Details",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "DDetails",
+                    "Category" : "Success",
+                    "Description" : "DDetails"
+                },
+                {
+                    "Name" : "DirectDepositLink",
+                    "Category" : "Success",
+                    "Description" : "DD PIA link"
+                },
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoDirectDeposit",
+                    "Category" : "Success",
+                    "Description" : "NoDirectDeposit"
+                },
+                {
+                    "Name" : "NoGarnishment",
+                    "Category" : "Success",
+                    "Description" : "NoGarnishment"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_PAYSLIP_ATD",
+            "IDForServiceURL" : "payroll.GetAftTaxDed",
+            "Description" : "Employee After Tax Deduction",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "Emplid",
+                    "DataType" : "String",
+                    "Description" : "Emplid",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PDFflag",
+                    "DataType" : "String",
+                    "Description" : "PDFflag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PayEndDate",
+                    "DataType" : "Date",
+                    "Description" : "PayEndDate",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PaycheckNumber",
+                    "DataType" : "Number",
+                    "Description" : "PaycheckNumber",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "After Tax Deductions",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoATDeductions",
+                    "Category" : "Success",
+                    "Description" : "No AT Deductions"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_PAYSLIP_BTD",
+            "IDForServiceURL" : "payroll.GetBfrTaxDed",
+            "Description" : "Employee Before Tax Deduction",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "Emplid",
+                    "DataType" : "String",
+                    "Description" : "Emplid",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PDFflag",
+                    "DataType" : "String",
+                    "Description" : "PDFflag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PayEndDate",
+                    "DataType" : "Date",
+                    "Description" : "PayEndDate",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PaycheckNumber",
+                    "DataType" : "Number",
+                    "Description" : "Paycheck Number",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Before Tax Deductions",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoBTDeductions",
+                    "Category" : "Success",
+                    "Description" : "No BT Deductions"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_PAYSLIP_ERBEN",
+            "IDForServiceURL" : "payroll.GetEmprPDBen",
+            "Description" : "Employer Paid Benefits",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "Emplid",
+                    "DataType" : "String",
+                    "Description" : "Emplid",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PDFflag",
+                    "DataType" : "String",
+                    "Description" : "PDFflag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PayEndDate",
+                    "DataType" : "Date",
+                    "Description" : "PayEndDate",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PaycheckNumber",
+                    "DataType" : "Number",
+                    "Description" : "PaycheckNumber",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Empr Paid Benefits",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoERBenefits",
+                    "Category" : "Success",
+                    "Description" : "No Empr Benefits"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_PAYSLIP_ERN",
+            "IDForServiceURL" : "payroll.GetEarnings",
+            "Description" : "Employee Earnings",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "Company",
+                    "DataType" : "String",
+                    "Description" : "Company",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Emplid",
+                    "DataType" : "String",
+                    "Description" : "Emplid",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "LineNum",
+                    "DataType" : "Number",
+                    "Description" : "LineNum",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "OffCycle",
+                    "DataType" : "String",
+                    "Description" : "OffCycle",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PDFflag",
+                    "DataType" : "String",
+                    "Description" : "PDFflag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PageNum",
+                    "DataType" : "Number",
+                    "Description" : "PageNum",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PayEndDate",
+                    "DataType" : "Date",
+                    "Description" : "PayEndDate",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PaycheckNumber",
+                    "DataType" : "Number",
+                    "Description" : "PaycheckNumber",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Paygroup",
+                    "DataType" : "String",
+                    "Description" : "Paygroup",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Special",
+                    "DataType" : "String",
+                    "Description" : "Special",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Earnings",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoEarnings",
+                    "Category" : "Success",
+                    "Description" : "NoEarnings"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_PAYSLIP_GARNISHMENTS",
+            "IDForServiceURL" : "payroll.GetPayslpGarnsh",
+            "Description" : "Payslip Garnishment",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "CompanyIn",
+                    "DataType" : "String",
+                    "Description" : "CompanyIn",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Emplid",
+                    "DataType" : "String",
+                    "Description" : "Emplid",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "LineNum",
+                    "DataType" : "Number",
+                    "Description" : "LineNum",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PageNum",
+                    "DataType" : "Number",
+                    "Description" : "PageNum",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PayEndDate",
+                    "DataType" : "Date",
+                    "Description" : "PayEndDate",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Paygroup",
+                    "DataType" : "String",
+                    "Description" : "Paygroup",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Details",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_PAYSLIP_LDED",
+            "IDForServiceURL" : "payroll.GetLineDeduction",
+            "Description" : "Line Level Deductions",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "Company",
+                    "DataType" : "String",
+                    "Description" : "Company",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Emplid",
+                    "DataType" : "String",
+                    "Description" : "Emplid",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "LineNum",
+                    "DataType" : "Number",
+                    "Description" : "LineNum",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "OffCycle",
+                    "DataType" : "String",
+                    "Description" : "OffCycle",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PDFflag",
+                    "DataType" : "String",
+                    "Description" : "PDFflag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PageNum",
+                    "DataType" : "Number",
+                    "Description" : "PageNum",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PayEndDate",
+                    "DataType" : "Date",
+                    "Description" : "PayEndDate",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PaycheckNumber",
+                    "DataType" : "Number",
+                    "Description" : "PaycheckNumber",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Paygroup",
+                    "DataType" : "String",
+                    "Description" : "Paygroup",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Special",
+                    "DataType" : "String",
+                    "Description" : "Special",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "LDeductions",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoLDeduction",
+                    "Category" : "Success",
+                    "Description" : "NoLDeduction"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_PAYSLIP_REQ",
+            "IDForServiceURL" : "payroll.GetPaySlips",
+            "Description" : "Employee Payslips Requests",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "Count",
+                    "DataType" : "Number",
+                    "Description" : "Count",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "CountTxt",
+                    "DataType" : "String",
+                    "Description" : "CountTxt",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Filter",
+                    "DataType" : "String",
+                    "Description" : "Filter",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Frequency",
+                    "DataType" : "String",
+                    "Description" : "Frequency",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Fromdate",
+                    "DataType" : "String",
+                    "Description" : "From Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Gtype",
+                    "DataType" : "String",
+                    "Description" : "Garnish Type",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Month",
+                    "DataType" : "String",
+                    "Description" : "Month",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ScheduleFilter",
+                    "DataType" : "String",
+                    "Description" : "ScheduleFilter",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Section",
+                    "DataType" : "String",
+                    "Description" : "Section",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Special",
+                    "DataType" : "String",
+                    "Description" : "Special",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Todate",
+                    "DataType" : "String",
+                    "Description" : "To Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "UserInputText",
+                    "DataType" : "String",
+                    "Description" : "UserInputText",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Year",
+                    "DataType" : "Number",
+                    "Description" : "Year",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Details",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "Frequency",
+                    "Category" : "Success",
+                    "Description" : "Frequency"
+                },
+                {
+                    "Name" : "NoRequests",
+                    "Category" : "Success",
+                    "Description" : "NoRequests"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_PAYSLIP_TAX",
+            "IDForServiceURL" : "payroll.GetEmpTaxes",
+            "Description" : "Employee Taxes",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "Emplid",
+                    "DataType" : "String",
+                    "Description" : "Emplid",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PDFflag",
+                    "DataType" : "String",
+                    "Description" : "PDFflag",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PayEndDate",
+                    "DataType" : "Date",
+                    "Description" : "PayEndDate",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PaycheckNumber",
+                    "DataType" : "Number",
+                    "Description" : "PaycheckNumber",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Taxes",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoTaxes",
+                    "Category" : "Success",
+                    "Description" : "No Taxes"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_USERPROFILE_DTL",
+            "IDForServiceURL" : "payroll.GetUserProfile",
+            "Description" : "User Profile Details",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "GreetingTxt",
+                    "DataType" : "String",
+                    "Description" : "Greeting Text",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "Success",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HPY_YRENDRPT_REQ",
+            "IDForServiceURL" : "payroll.GetYearEndReports",
+            "Description" : "Year End Reports",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "ConsentCheck",
+                    "DataType" : "String",
+                    "Description" : "ConsentCheck",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Count",
+                    "DataType" : "Number",
+                    "Description" : "Count",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "InputDate",
+                    "DataType" : "String",
+                    "Description" : "InputDate",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Month",
+                    "DataType" : "String",
+                    "Description" : "Month",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "TaxformID",
+                    "DataType" : "String",
+                    "Description" : "TaxformID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ViewDateFlg",
+                    "DataType" : "String",
+                    "Description" : "ViewDateFlg",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Year",
+                    "DataType" : "Number",
+                    "Description" : "Year",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "YearEndQuery",
+                    "DataType" : "String",
+                    "Description" : "User Input String",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "HPY_GetOutputJSON",
+                    "DataType" : "Compound",
+                    "Description" : "Details",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "NoAccess",
+                    "Category" : "Success",
+                    "Description" : "NoAccess"
+                },
+                {
+                    "Name" : "NoRequests",
+                    "Category" : "Success",
+                    "Description" : "NoRequests"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                },
+                {
+                    "Name" : "ViewDateAvailable",
+                    "Category" : "Success",
+                    "Description" : "ViewDateAvailable"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HRCD_CHATBOT_SVC",
+            "IDForServiceURL" : "compdir.ViewEmployee",
+            "Description" : "View Employees",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "EmplName",
+                    "DataType" : "String",
+                    "Description" : "Employee Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "InputEmplId",
+                    "DataType" : "String",
+                    "Description" : "InputEmplId",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "InputEmplRcd",
+                    "DataType" : "Number",
+                    "Description" : "InputEmplRcd",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "Building",
+                    "DataType" : "String",
+                    "Description" : "Building",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "BusnAddress",
+                    "DataType" : "String",
+                    "Description" : "BusnAddress",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "CellPhone",
+                    "DataType" : "String",
+                    "Description" : "CellPhone",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Department",
+                    "DataType" : "String",
+                    "Description" : "Department",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplEmail",
+                    "DataType" : "String",
+                    "Description" : "Email",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplId",
+                    "DataType" : "String",
+                    "Description" : "EmplId",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplNameDisplay",
+                    "DataType" : "String",
+                    "Description" : "Employee Display Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplPhone",
+                    "DataType" : "String",
+                    "Description" : "Phone",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "String",
+                    "Description" : "Employee Record",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "JobTitle",
+                    "DataType" : "String",
+                    "Description" : "Job Title",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Location",
+                    "DataType" : "String",
+                    "Description" : "Location",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "OperatorName",
+                    "DataType" : "String",
+                    "Description" : "OperatorName",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Photourl",
+                    "DataType" : "String",
+                    "Description" : "Photo String",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Position",
+                    "DataType" : "String",
+                    "Description" : "Position",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Supervisor",
+                    "DataType" : "String",
+                    "Description" : "Supervisor",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SupervisorDept",
+                    "DataType" : "String",
+                    "Description" : "SupervisorDept",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SupervisorERN",
+                    "DataType" : "Number",
+                    "Description" : "Supervisor ERN",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SupervisorEmail",
+                    "DataType" : "String",
+                    "Description" : "SupervisorEmail",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SupervisorId",
+                    "DataType" : "String",
+                    "Description" : "SupervisorId",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SupervisorLoc",
+                    "DataType" : "String",
+                    "Description" : "SupervisorLocation",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SupervisorPhone",
+                    "DataType" : "String",
+                    "Description" : "SupervisorPhone",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SupervisorTitle",
+                    "DataType" : "String",
+                    "Description" : "SupervisorTitle",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "MultiJobs",
+                    "Category" : "Success",
+                    "Description" : "MultiJobs"
+                },
+                {
+                    "Name" : "NoJobs",
+                    "Category" : "Success",
+                    "Description" : "NoJobs"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                },
+                {
+                    "Name" : "SingleJob",
+                    "Category" : "Success",
+                    "Description" : "SingleJob"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HRCD_DIRECTS_SVC",
+            "IDForServiceURL" : "compdir.ViewDirects",
+            "Description" : "ViewDirects",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "EmplName",
+                    "DataType" : "String",
+                    "Description" : "Employee Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "MgrEmplID",
+                    "DataType" : "String",
+                    "Description" : "Manager Employee ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "MgrEmplRcd",
+                    "DataType" : "String",
+                    "Description" : "Manager Employee Rcd",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "Department",
+                    "DataType" : "String",
+                    "Description" : "Department",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "DirCount",
+                    "DataType" : "Number",
+                    "Description" : "Directs Count",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplEmail",
+                    "DataType" : "String",
+                    "Description" : "EmplEmail",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplId",
+                    "DataType" : "String",
+                    "Description" : "EmplId",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplNameDisplay",
+                    "DataType" : "String",
+                    "Description" : "Employee Display Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplPhone",
+                    "DataType" : "String",
+                    "Description" : "EmplPhone",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EmplRcd",
+                    "DataType" : "String",
+                    "Description" : "Employee Record",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "JobTitle",
+                    "DataType" : "String",
+                    "Description" : "Job Title",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Location",
+                    "DataType" : "String",
+                    "Description" : "Location",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ManagerName",
+                    "DataType" : "String",
+                    "Description" : "ManagerName",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Fail"
+                },
+                {
+                    "Name" : "MultiJobs",
+                    "Category" : "Success",
+                    "Description" : "MultiJobs"
+                },
+                {
+                    "Name" : "NoJobs",
+                    "Category" : "Success",
+                    "Description" : "NoJobs"
+                },
+                {
+                    "Name" : "Pass",
+                    "Category" : "Success",
+                    "Description" : "Pass"
+                },
+                {
+                    "Name" : "SingleJob",
+                    "Category" : "Success",
+                    "Description" : "SingleJob"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HRCD_GET_OPERATOR",
+            "IDForServiceURL" : "compdir.GetOperator",
+            "Description" : "Get Operator",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "OperatorName",
+                    "DataType" : "String",
+                    "Description" : "Operator Name",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "Fail",
+                    "Category" : "Failure",
+                    "Description" : "Failed"
+                },
+                {
+                    "Name" : "Success",
+                    "Category" : "Success",
+                    "Description" : "Success"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HRS_APPLICANT_INFO",
+            "IDForServiceURL" : "hrs.GetApplicantBasicInfo",
+            "Description" : "Get Applicant Name and Session status",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "SessionID",
+                    "DataType" : "String",
+                    "Description" : "Session ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SiteID",
+                    "DataType" : "Number",
+                    "Description" : "Site ID",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "ApplicantName",
+                    "DataType" : "String",
+                    "Description" : "ApplicantName",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "DataFound",
+                    "Category" : "Success",
+                    "Description" : "Data Found"
+                },
+                {
+                    "Name" : "NoDataFound",
+                    "Category" : "Success",
+                    "Description" : "No Data Found"
+                },
+                {
+                    "Name" : "SessionExpired",
+                    "Category" : "Success",
+                    "Description" : "Session Expired"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HRS_APPL_STATUS",
+            "IDForServiceURL" : "hrs.GetApplicationStatus",
+            "Description" : "Get Job Applications Status for Applicant",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "BeginDate",
+                    "DataType" : "Date",
+                    "Description" : "Begin Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EndDate",
+                    "DataType" : "Date",
+                    "Description" : "End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SessionID",
+                    "DataType" : "String",
+                    "Description" : "Session ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SiteID",
+                    "DataType" : "Number",
+                    "Description" : "Site ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Status",
+                    "DataType" : "String",
+                    "Description" : "Status Code",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "AlternateSearchDone",
+                    "DataType" : "String",
+                    "Description" : "Alternate Search Done",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "AppJobOpeningId",
+                    "DataType" : "Number",
+                    "Description" : "Job Opening ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "AppPostingTitle",
+                    "DataType" : "String",
+                    "Description" : "Posting Title",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ApplicationDate",
+                    "DataType" : "Date",
+                    "Description" : "Application Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ApplicationStatus",
+                    "DataType" : "String",
+                    "Description" : "Status",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ApplicationStatusCode",
+                    "DataType" : "String",
+                    "Description" : "Application Status Code",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ApplicationStatusHelpText",
+                    "DataType" : "String",
+                    "Description" : "Status Description",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "LastChangeDate",
+                    "DataType" : "Date",
+                    "Description" : "Last Change Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "ProfileSequence",
+                    "DataType" : "Number",
+                    "Description" : "Profile Sequence",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SubmitSource",
+                    "DataType" : "String",
+                    "Description" : "Submit Source",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "InvalidSession",
+                    "Category" : "Success",
+                    "Description" : "Invalid Session"
+                },
+                {
+                    "Name" : "MultiApplication",
+                    "Category" : "Success",
+                    "Description" : "Multiple Application"
+                },
+                {
+                    "Name" : "NoApplication",
+                    "Category" : "Success",
+                    "Description" : "No Application"
+                },
+                {
+                    "Name" : "SingleApplication",
+                    "Category" : "Success",
+                    "Description" : "Single Application"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HRS_APP_NOTIF",
+            "IDForServiceURL" : "hrs.GetApplicantNotifications",
+            "Description" : "Get Applicant's Notifications",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "BeginDate",
+                    "DataType" : "Date",
+                    "Description" : "Begin Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "EndDate",
+                    "DataType" : "Date",
+                    "Description" : "End Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SessionID",
+                    "DataType" : "String",
+                    "Description" : "Session ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SiteID",
+                    "DataType" : "Number",
+                    "Description" : "Site ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Status",
+                    "DataType" : "String",
+                    "Description" : "Status",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Type",
+                    "DataType" : "String",
+                    "Description" : "Type",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "DateReceived",
+                    "DataType" : "Date",
+                    "Description" : "Date Received",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NotificationStatus",
+                    "DataType" : "String",
+                    "Description" : "Notification Status",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NotificationStatusDesc",
+                    "DataType" : "String",
+                    "Description" : "Notification Status Desc",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NotificationSubject",
+                    "DataType" : "String",
+                    "Description" : "Notification Subject",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NotificationType",
+                    "DataType" : "String",
+                    "Description" : "Notification Type",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "NotificationTypeDescr",
+                    "DataType" : "String",
+                    "Description" : "Notification Type Descr",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "TimeReceived",
+                    "DataType" : "Time",
+                    "Description" : "Time Received",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "urlParameters",
+                    "DataType" : "String",
+                    "Description" : "URL Parameters",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "InvalidSession",
+                    "Category" : "Success",
+                    "Description" : "Invalid Session"
+                },
+                {
+                    "Name" : "MultipleNotification",
+                    "Category" : "Success",
+                    "Description" : "Multiple Notification"
+                },
+                {
+                    "Name" : "NoNotification",
+                    "Category" : "Success",
+                    "Description" : "No Notification"
+                },
+                {
+                    "Name" : "SingleNotification",
+                    "Category" : "Success",
+                    "Description" : "Single Notification"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HRS_APP_SRCH_JOBS",
+            "IDForServiceURL" : "hrs.GetSearchResults",
+            "Description" : "Get Job Search Results",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "SavedSearchName",
+                    "DataType" : "String",
+                    "Description" : "Saved Search Name",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SearchString",
+                    "DataType" : "String",
+                    "Description" : "Search String",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SessionID",
+                    "DataType" : "String",
+                    "Description" : "Session ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SiteID",
+                    "DataType" : "Number",
+                    "Description" : "Site ID",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "EncodedParameter",
+                    "DataType" : "String",
+                    "Description" : "Encoded Search String",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "JobOpeningID",
+                    "DataType" : "Number",
+                    "Description" : "Job Opening ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "JobPostingSequence",
+                    "DataType" : "Number",
+                    "Description" : "Job Posting Sequence",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PostDate",
+                    "DataType" : "Date",
+                    "Description" : "Post Date",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PostingCount",
+                    "DataType" : "Number",
+                    "Description" : "Posting Count",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PostingTitle",
+                    "DataType" : "String",
+                    "Description" : "Posting Title",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "InvalidSession",
+                    "Category" : "Success",
+                    "Description" : "Invalid Session"
+                },
+                {
+                    "Name" : "MultiplePosting",
+                    "Category" : "Success",
+                    "Description" : "Multiple Posting"
+                },
+                {
+                    "Name" : "NoPosting",
+                    "Category" : "Success",
+                    "Description" : "No Posting"
+                },
+                {
+                    "Name" : "SinglePosting",
+                    "Category" : "Success",
+                    "Description" : "Single Posting"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HRS_APP_SVD_SRCH",
+            "IDForServiceURL" : "hrs.GetSavedSearches",
+            "Description" : "Get Applicant's Saved Searches",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : true,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "SessionID",
+                    "DataType" : "String",
+                    "Description" : "Session ID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SiteID",
+                    "DataType" : "Number",
+                    "Description" : "Site ID",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "Facets",
+                    "DataType" : "String",
+                    "Description" : "Facets",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Keyword",
+                    "DataType" : "String",
+                    "Description" : "Keyword",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "PostedWithin",
+                    "DataType" : "Number",
+                    "Description" : "Posted Within",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SearchName",
+                    "DataType" : "String",
+                    "Description" : "Saved Search Name",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "InvalidSession",
+                    "Category" : "Success",
+                    "Description" : "Invalid Session"
+                },
+                {
+                    "Name" : "MultipleSearch",
+                    "Category" : "Success",
+                    "Description" : "Multiple Search"
+                },
+                {
+                    "Name" : "NoSearch",
+                    "Category" : "Success",
+                    "Description" : "No Search"
+                },
+                {
+                    "Name" : "SingleSearch",
+                    "Category" : "Success",
+                    "Description" : "Single Saved Search"
+                }
+            ]
+        },
+        {
+            "ApplicationServiceID" : "HRS_APP_URL",
+            "IDForServiceURL" : "hrs.GetURL",
+            "Description" : "Get Careers URL",
+            "CacheSupportLevel" : "",
+            "IsTokenMandatory" : true,
+            "IsMultiRowInput" : false,
+            "IsMultiRowOutput" : false,
+            "InputParameters" : [
+                {
+                    "ParameterName" : "Action",
+                    "DataType" : "String",
+                    "Description" : "Action",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Component",
+                    "DataType" : "String",
+                    "Description" : "Component",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Market",
+                    "DataType" : "String",
+                    "Description" : "Market",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Menu",
+                    "DataType" : "String",
+                    "Description" : "Menu",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Node",
+                    "DataType" : "String",
+                    "Description" : "Node",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Page",
+                    "DataType" : "String",
+                    "Description" : "Page",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "Portal",
+                    "DataType" : "String",
+                    "Description" : "Portal",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "SiteID",
+                    "DataType" : "Number",
+                    "Description" : "SiteID",
+                    "Properties" : {
+                    }
+                },
+                {
+                    "ParameterName" : "URLType",
+                    "DataType" : "Number",
+                    "Description" : "URLType",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "OutputParameters" : [
+                {
+                    "ParameterName" : "URL",
+                    "DataType" : "String",
+                    "Description" : "URL",
+                    "Properties" : {
+                    }
+                }
+            ],
+            "ResultStates" : [
+                {
+                    "Name" : "DataFound",
+                    "Category" : "Success",
+                    "Description" : "Data Found"
+                },
+                {
+                    "Name" : "NoDataFound",
+                    "Category" : "Success",
+                    "Description" : "No Data Found"
+                }
+            ]
+        }
+    ]
+}

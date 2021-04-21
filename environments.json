@@ -1,0 +1,9 @@
+{
+    "HCM": {
+        "baseURL": "https://aims-dv2.wipo.int/PSIGW/RESTListeningConnector/WPHRDV2/PTCB_APPL_SVC.v1",
+        "user": "WPO_CHATBOT",
+        "password": "Test@123",
+        "static_describe": "../config/hcm_describe.json",
+        "rootca":"../config/psdv2cert.cer"
+    }
+}
